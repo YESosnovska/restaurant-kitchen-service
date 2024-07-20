@@ -17,10 +17,11 @@
       </tr>
     {% for cook in cook_list %}
       <tr>
-        <td>{{ driver.id }}</td>
-        <td>{{ driver.first_name }}</td>
-        <td>{{ driver.last_name }}</td>
-        <td>{{ driver.license_number }}</td>
+        <td>{{ cook.id }}</td>
+        <td>{{ cook.username }}</td>
+        <td>{{ cook.first_name }}</td>
+        <td>{{ cook.last_name }}</td>
+        <td>{{ cook.years_of_experience }}</td>
       </tr>
     {% endfor %}
 

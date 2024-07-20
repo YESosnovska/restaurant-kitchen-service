@@ -24,5 +24,11 @@ def index(request):
 
 class CookListView(generic.ListView):
     model = Cook
-    context_object_name = "cooks"
+    context_object_name = "cook_list"
     template_name = "kitchen/cooks_list.html"
+
+
+class DishTypeListView(generic.ListView):
+    model = DishType
+    context_object_name = "dish_types_list"
+    template_name = "kitchen/dish_types_list.html"

@@ -52,7 +52,7 @@ class CookCreateView(LoginRequiredMixin, generic.CreateView):
 
 class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Cook
-    success_url = reverse_lazy("")
+    success_url = reverse_lazy("kitchen:cooks")
 
 
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
@@ -60,6 +60,23 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "dish_types_list"
     template_name = "kitchen/dish_types_list.html"
     paginate_by = 5
+
+
+class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = DishType
+    fields = "__all__"
+    success_url = reverse_lazy("kitchen:dish-types")
+
+
+class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = DishType
+    success_url = reverse_lazy("kitchen:dish-types")
+
+
+class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
+    model = DishType
+    fields = "__all__"
+    success_url = reverse_lazy("kitchen:dish-types")
 
 
 class DishListView(LoginRequiredMixin, generic.ListView):

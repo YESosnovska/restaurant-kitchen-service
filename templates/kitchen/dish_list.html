@@ -1,7 +1,10 @@
-{% extends "base.html" %}
+{% extends "layouts/base_sections.html" %}
 {% load crispy_forms_filters %}
 
+
+
 {% block content %}
+  <div style="margin-top: 70px">
     <h1>
       Dish List
         <a href="{% url 'kitchen:dish-create' %}" class="btn btn-primary link-to-page">
@@ -30,7 +33,12 @@
     {% endfor %}
 
     </table>
+      {% block pagination %}
+        {% include "includes/pagination.html" %}
+      {% endblock %}
+
     {% else %}
       <p>There are no dishes in the restaurant.</p>
     {% endif %}
+  </div>
 {% endblock %}

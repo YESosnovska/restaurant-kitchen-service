@@ -1,6 +1,7 @@
-{% extends "base.html" %}
+{% extends "layouts/base_sections.html" %}
 
 {% block content %}
+  <div style="margin-top: 70px; margin-left: 30px">
   <h1>
     Username: {{ cook.username }}
     <a href="{% url 'kitchen:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page">
@@ -29,5 +30,6 @@
     {% empty %}
       <p>No dishes!</p>
     {% endfor %}
+  </div>
   </div>
 {% endblock %}

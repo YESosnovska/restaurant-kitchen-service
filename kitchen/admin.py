@@ -8,8 +8,8 @@ from kitchen.models import Cook, DishType, Dish
 class CookAdmin(admin.ModelAdmin):
     list_display = UserAdmin.list_display + ("years_of_experience",)
     fieldsets = UserAdmin.fieldsets + (
-        ("Additional Information",
-         {"fields": ("years_of_experience",)}),)
+        ("Additional Information", {"fields": ("years_of_experience",)}),
+    )
     add_fieldsets = UserAdmin.add_fieldsets + (
         (
             (
@@ -20,7 +20,7 @@ class CookAdmin(admin.ModelAdmin):
                         "last_name",
                         "years_of_experience",
                     )
-                }
+                },
             )
         )
     )

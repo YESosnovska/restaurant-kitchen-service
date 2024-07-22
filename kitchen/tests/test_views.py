@@ -21,9 +21,7 @@ class PublicDishTypeTest(TestCase):
         self.dish_type = DishType.objects.create(
             name="test",
         )
-        url = reverse(
-            "kitchen:dish-type-delete",
-            args=[self.dish_type.id])
+        url = reverse("kitchen:dish-type-delete", args=[self.dish_type.id])
         res = self.client.get(url)
         self.assertNotEqual(res.status_code, 200)
 
@@ -31,9 +29,7 @@ class PublicDishTypeTest(TestCase):
         self.dish_type = DishType.objects.create(
             name="test",
         )
-        url = reverse(
-            "kitchen:dish-type-update",
-            args=[self.dish_type.id])
+        url = reverse("kitchen:dish-type-update", args=[self.dish_type.id])
         res = self.client.get(url)
         self.assertNotEqual(res.status_code, 200)
 
@@ -41,8 +37,7 @@ class PublicDishTypeTest(TestCase):
 class PrivateDishTypeTest(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
-            username="test",
-            password="test123"
+            username="test", password="test123"
         )
         self.client.force_login(self.user)
 
@@ -58,9 +53,7 @@ class PrivateDishTypeTest(TestCase):
         self.dish_type = DishType.objects.create(
             name="test",
         )
-        url = reverse(
-            "kitchen:dish-type-update",
-            args=[self.dish_type.id])
+        url = reverse("kitchen:dish-type-update", args=[self.dish_type.id])
         res = self.client.get(url)
         self.assertEqual(res.status_code, 200)
 
@@ -68,8 +61,6 @@ class PrivateDishTypeTest(TestCase):
         self.dish_type = DishType.objects.create(
             name="test",
         )
-        url = reverse(
-            "kitchen:dish-type-delete",
-            args=[self.dish_type.id])
+        url = reverse("kitchen:dish-type-delete", args=[self.dish_type.id])
         res = self.client.get(url)
         self.assertEqual(res.status_code, 200)

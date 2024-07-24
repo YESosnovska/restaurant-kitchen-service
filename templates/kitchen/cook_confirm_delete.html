@@ -1,0 +1,15 @@
+{% extends "layouts/base_sections.html" %}
+
+{% block content %}
+  <div style="margin-top: 70px; margin-left: 30px">
+  <h1>Delete cook?</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+
+    <input type="submit" value="Yes" class="btn btn-danger">
+    <br>
+    <a href="{% url 'kitchen:cooks' %}">Cancel</a>
+  </form>
+  </div>
+{% endblock %}
+

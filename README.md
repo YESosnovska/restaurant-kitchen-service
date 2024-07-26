@@ -14,4 +14,20 @@ use login: user, password: user1234 to log in
 * Managing dishes and dish types directly from website interface
 
 
+## Installation 
+
+Python3 must be already installed
+
+
+``` shell
+git clone https://github.com/YESosnovska/restaurant-kitchen-service/tree/develop
+cd restaurant-kitchen-service
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py runserver
+```
+
+
+
 

@@ -1,0 +1,45 @@
+{% extends "layouts/base_sections.html" %}
+
+{% block content %}
+  <div style="margin-top: 70px; margin-left: 30px">
+  <h1>
+    Name: {{ dish.name }}
+    <a href="{% url 'kitchen:dish-delete' pk=dish.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'kitchen:dish-update' pk=dish.id %}" class="btn btn-secondary link-to-page">
+      Update dish
+    </a>
+  </h1>
+
+  <p><strong>Price:</strong> {{ dish.price }}</p>
+  <p><strong>Dish type:</strong> {{ dish.dish_type }}</p>
+  <p><strong>Description:</strong> {{ dish.description }}</p>
+
+  <div class="ml-3">
+    <h1>
+      Cooks
+      {% if dish in user.dishes.all %}
+        <form action="{% url 'kitchen:toggle-dish-assign' pk=dish.pk %}" method="post">
+        {% csrf_token %}
+          <button class="btn btn-dribbble" type="submit">I cannot cook this dish</button>
+        </form>
+      {% else %}
+        <form action="{% url 'kitchen:toggle-dish-assign' pk=dish.pk %}" method="post">
+        {% csrf_token %}
+          <button class="btn btn-behance" type="submit">I can cook this dish</button>
+        </form>
+      {% endif %}
+    </h1>
+    <hr>
+      <ul>
+        {% for cook in dish.cooks.all %}
+        <li>{{ cook.username }} ({{ cook.first_name }} {{ cook.last_name }})</li>
+    {% empty %}
+      <p>No cooks!</p>
+    {% endfor %}
+      </ul>
+  </div>
+  </div>
+{% endblock %}

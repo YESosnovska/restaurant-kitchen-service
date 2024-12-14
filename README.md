@@ -4,9 +4,7 @@ Django project for managing restaurant kitchen
 
 ## Check it out!
 
-Restaurant Kitchen Service deployed to Render(https://restaurant-kitchen-service-r93o.onrender.com/)
-
-use login: user, password: user1234 to log in
+Use login: user2, password: user1234 to log in
 
 ## Features 
 
@@ -20,7 +18,7 @@ Python3 must be already installed
 
 
 ``` shell
-git clone https://github.com/YESosnovska/restaurant-kitchen-service/tree/develop
+git clone https://github.com/YESosnovska/restaurant-kitchen-service.git
 cd restaurant-kitchen-service
 python3 -m venv venv
 source venv/bin/activate
@@ -28,6 +26,11 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
-
+## Used technologies
+- Python
+- Django ORM
+- HTML
+- CSS
+- JavaScript
 
 

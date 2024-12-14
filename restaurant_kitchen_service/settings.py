@@ -96,7 +96,8 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(db_from_env)
 
-DATABASE_URL = "postgresql://kitchendb_owner:nrYahI1ozM5t@ep-empty-smoke-a23qz8f6.eu-central-1.aws.neon.tech/kitchendb?sslmode=require"
+DATABASE_URL = ("postgresql://kitchendb_owner:nrYahI1ozM5t@ep-empty-smoke-a23qz8f6.eu-central-1.aws.neon.tech"
+                "/kitchendb?sslmode=require")
 
 
 # Password validation
